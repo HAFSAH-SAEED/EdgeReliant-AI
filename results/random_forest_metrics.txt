@@ -1,0 +1,12 @@
+
+RANDOM FOREST BASELINE EVALUATION
+
+Training Samples: 4000
+Testing Samples: 1000
+
+Accuracy: 0.8950
+Accuracy Percentage: 89.50%
+
+Macro Precision: 0.9041
+Macro Recall: 0.8950
+Macro F1-Score: 0.8974

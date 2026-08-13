@@ -1,0 +1,6 @@
+Test Case,Predicted Fault,Confidence
+Normal,Normal,63.87
+Overheating,Overheating,100.0
+High Vibration,High Vibration,100.0
+Pressure Anomaly,Pressure Anomaly,100.0
+Electrical Instability,Electrical Instability,100.0

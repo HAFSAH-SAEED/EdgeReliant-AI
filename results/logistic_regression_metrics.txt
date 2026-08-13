@@ -1,0 +1,12 @@
+
+LOGISTIC REGRESSION BASELINE
+
+Training Samples: 4000
+Testing Samples: 1000
+
+Accuracy: 0.9060
+Accuracy Percentage: 90.60%
+
+Macro Precision: 0.9182
+Macro Recall: 0.9060
+Macro F1-Score: 0.9089

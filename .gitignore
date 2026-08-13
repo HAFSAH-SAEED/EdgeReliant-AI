@@ -1,0 +1,22 @@
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Old experimental model
+trained_model.pkl
+
+# VS Code
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db

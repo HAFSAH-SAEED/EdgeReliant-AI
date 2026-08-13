@@ -1,0 +1,92 @@
+
+EDGE RELIANT AI
+MODEL COMPARISON RESULTS
+
+==================================================
+DATASET
+==================================================
+
+Total Samples: 5000
+Training Samples: 4000
+Testing Samples: 1000
+
+Fault Classes:
+- Normal
+- Overheating
+- High Vibration
+- Pressure Anomaly
+- Electrical Instability
+
+
+==================================================
+MODEL 1: RANDOM FOREST
+==================================================
+
+Accuracy: 89.50%
+Macro Precision: 90.41%
+Macro Recall: 89.50%
+Macro F1-Score: 89.74%
+
+Confusion Matrix:
+[168   2  25   5   0]
+[  1 189  10   0   0]
+[  6   3 173  12   6]
+[  1   1  12 185   1]
+[  1   0  19   0 180]
+
+
+==================================================
+MODEL 2: LOGISTIC REGRESSION
+==================================================
+
+Accuracy: 90.60%
+Macro Precision: 91.82%
+Macro Recall: 90.60%
+Macro F1-Score: 90.89%
+
+
+==================================================
+MODEL COMPARISON
+==================================================
+
+                    Random Forest    Logistic Regression
+Accuracy                 89.50%             90.60%
+Macro Precision          90.41%             91.82%
+Macro Recall             89.50%             90.60%
+Macro F1-Score           89.74%             90.89%
+
+
+==================================================
+OBSERVATION
+==================================================
+
+Logistic Regression achieved the highest performance
+on the current synthetic dataset.
+
+Accuracy improvement over Random Forest:
+90.60% - 89.50% = 1.10 percentage points
+
+Macro F1 improvement:
+90.89% - 89.74% = 1.15 percentage points
+
+
+==================================================
+CURRENT BEST MODEL
+==================================================
+
+Logistic Regression
+
+Accuracy: 90.60%
+Macro F1-Score: 90.89%
+
+
+==================================================
+IMPORTANT NOTE
+==================================================
+
+These results are based on a simulated/synthetic sensor
+dataset containing 5,000 samples and five fault classes.
+
+The results demonstrate the behavior of the models on
+the current dataset and should not be interpreted as
+real-world machine performance.
