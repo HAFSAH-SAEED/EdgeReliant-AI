@@ -73,6 +73,12 @@ The lower confidence for the Normal case is intentionally preserved rather than 
 
 ---
 
+## Technical Report
+
+The complete technical report documents the system architecture, simulated sensor environment, dataset construction, machine-learning methodology, experimental evaluation, error analysis, engineering decision-support layer, limitations, and proposed future research.
+
+[Read the Full Technical Report](EdgeReliant-AI_Technical_Report.pdf)
+
 ## Not Just a Label — A Response
 
 For example, given:
