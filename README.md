@@ -1,4 +1,3 @@
-
 # EdgeReliant-AI
 
 ### From Sensor Data to Engineering Decisions
@@ -9,10 +8,11 @@ Most ML fault-detection projects stop at *"Fault detected."*
 
 **EdgeReliant-AI doesn't.**
 
-    Sensor Data → Validation → ML Classification → Confidence
-         → Severity → Recommended Action → Verification
+    Sensor Data → Validation → ML Classification → Confidence → Severity → Recommended Action → Verification
 
-A predictive-maintenance prototype that turns multi-sensor readings into an engineering response — not just a label.
+A predictive-maintenance prototype that turns raw multi-sensor readings into a real engineering decision, not just a label.
+
+**Skills demonstrated:** data validation & EDA · feature engineering · classification · model evaluation & comparison · fault-severity decision logic · reproducible ML pipeline
 
 ---
 
@@ -22,7 +22,7 @@ Five sensor features:
 
 **Temperature · Vibration · Pressure · Voltage · Current**
 
-Five machine conditions:
+Five fault classes:
 
 `Normal` · `Overheating` · `High Vibration` · `Pressure Anomaly` · `Electrical Instability`
 
@@ -34,28 +34,38 @@ The model is trained on a validated, balanced simulated dataset containing **5,0
 
 Two machine-learning models were evaluated using the same train/test split:
 
-| Model | Accuracy | Macro F1 |
-|---|---:|---:|
-| **Logistic Regression** | **90.60%** | **90.89%** |
-| Random Forest | 89.50% | 89.74% |
+| Model | Accuracy | Macro Precision | Macro Recall | Macro F1 |
+|---|---:|---:|---:|---:|
+| **Logistic Regression** | **90.60%** | **91.82%** | **90.60%** | **90.89%** |
+| Random Forest | 89.50% | 90.41% | 89.50% | 89.74% |
 
-Logistic Regression performed better across **accuracy, macro precision, macro recall, and macro F1**, so it was selected as the final model.
+Logistic Regression performed better across **accuracy, precision, recall, and F1**, so it was selected as the final model.
 
 The complete preprocessing + classification pipeline is saved as:
 
 `models/final_model.pkl`
 
-### Multi-Fault Test
+### Confusion Matrix — Logistic Regression
+
+![Logistic Regression Confusion Matrix](results/confusion_matrix_logistic_regression.png)
+
+### Model Performance Comparison
+
+![Model Performance Comparison](results/model_performance_comparison.png)
+
+---
+
+## Multi-Fault Testing
 
 Representative test cases were created for all five fault classes:
 
 | Test Case | Prediction | Confidence |
 |---|---|---:|
-| Overheating | ✅ Overheating | 100.00% |
-| High Vibration | ✅ High Vibration | 100.00% |
-| Pressure Anomaly | ✅ Pressure Anomaly | 100.00% |
-| Electrical Instability | ✅ Electrical Instability | 100.00% |
-| Normal | ✅ Normal | 63.87% |
+| Overheating | Overheating | 100.00% |
+| High Vibration | High Vibration | 100.00% |
+| Pressure Anomaly | Pressure Anomaly | 100.00% |
+| Electrical Instability | Electrical Instability | 100.00% |
+| Normal | Normal | 63.87% |
 
 All five representative test cases were classified into their intended fault categories.
 
@@ -86,7 +96,7 @@ EdgeReliant-AI produces:
     Re-check temperature after corrective action and confirm
     that it returns toward the normal operating range.
 
-The confidence value represents the model's estimated probability for the predicted class — not a guarantee of real-world correctness.
+The confidence value represents the model's estimated probability for the predicted class and is not treated as a guarantee of real-world correctness.
 
 ---
 
@@ -111,11 +121,7 @@ The strongest overall sensor relationship observed was:
 
 **Voltage ↔ Current: r ≈ -0.67**
 
-Random Forest feature importance ranked:
-
-**Vibration → Pressure → Temperature → Voltage → Current**
-
-as the top-to-bottom contributors in that model.
+Random Forest feature importance ranked **Vibration** and **Pressure** as the top two contributors in that model.
 
 ---
 
@@ -172,8 +178,8 @@ as the top-to-bottom contributors in that model.
     │   └── final_model.pkl
     │
     ├── results/
-    │   ├── evaluation metrics
     │   ├── confusion matrices
+    │   ├── evaluation metrics
     │   ├── model comparison
     │   └── multi-fault results
     │
@@ -194,10 +200,6 @@ as the top-to-bottom contributors in that model.
 Install dependencies:
 
     pip install -r requirements.txt
-
-Generate sensor data:
-
-    python src/sensor_simulator.py
 
 Validate the dataset:
 
@@ -229,12 +231,7 @@ Compare models:
 
 ## Roadmap
 
-**Real sensor integration**  
-**Edge deployment**  
-**Time-series fault prediction**  
-**Anomaly detection for unseen faults**  
-**Explainable AI**  
-**Computer-vision-based inspection**
+**Real sensor integration** · **Edge deployment** · **Time-series fault prediction** · **Anomaly detection** · **Explainable AI** · **Computer-vision-based inspection**
 
 ---
 
@@ -248,9 +245,11 @@ This is a prototype, and I know it.
 
 The data is simulated. There are no physical sensors yet. The model has not been validated on an industrial machine or deployed to an edge device.
 
-But the architecture is intentionally built to move in that direction:
+But the pipeline architecture is intentionally built to move in that direction:
 
 **Sensors → Edge ML → Diagnosis → Engineering Action**
+
+That is the direction I'm interested in exploring further: **embedded AI, edge intelligence, robotics, and eventually computer-vision-based inspection.**
 
 ---
 
@@ -261,3 +260,11 @@ But the architecture is intentionally built to move in that direction:
 Built around one idea:
 
 > **Good ML doesn't just answer "what happened." It helps answer "what do I do next?"**
+
+---
+
+## Connect
+
+**LinkedIn:** [Hafsah Saeed](https://www.linkedin.com/in/hafsah-saeed-194a77343/)
+
+**GitHub:** [HAFSAH-SAEED](https://github.com/HAFSAH-SAEED)
